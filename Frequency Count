@@ -1,0 +1,25 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <cstring>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    char s[1000];
+    cin>>s;
+    int N=strlen(s);
+    int u=0,l=0;
+    for(int i=0;i<N;i++)
+    {
+        if(islower(s[i]))
+            l++;
+        else if(isupper(s[i]))
+            u++;
+    }
+    cout<<u<<" "<<l;
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
