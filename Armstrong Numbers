@@ -1,0 +1,48 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int isarng(int n)
+{   int count=0;
+    int temp=n;
+    while(n!=0)
+    {
+        n/=10;
+        count++;
+    }
+    n=temp;
+    int cube=0;
+    int check=n;
+    while(n!=0)
+    {
+        temp=n%10;
+        cube=cube+pow(temp,count);
+        n/=10;
+    }
+    if(cube==check) 
+    { 
+        return 1;
+    }
+    else return 0;
+}
+
+int main() {
+    int T;
+    cin>>T;
+    while(T)
+    {
+        int l,u;
+        cin>>l>>u;
+        for(int i=l;i<=u;i++)
+        {
+            if(isarng(i)==1)
+                cout<<i<<' ';
+        }
+        cout<<"\n";
+        T--;
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
