@@ -1,0 +1,18 @@
+list_names=input().split(' ')
+names_set = set(list_names)
+freq_dict=dict()
+
+all_unique=True
+for unique_name in names_set:
+    unique_name_count=0
+    for names in list_names:
+        if unique_name==names:
+            unique_name_count+=1
+    freq_dict[unique_name]=unique_name_count        
+for name in list_names:    
+    if freq_dict[name]>1:
+        all_unique=False
+        print(f'{name} {freq_dict[name]}')
+        freq_dict[name]=0;
+if all_unique==True:
+        print("-1")
